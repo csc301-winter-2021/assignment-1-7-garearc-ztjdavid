@@ -1,5 +1,7 @@
 <template>
-  <div>111111</div>
+  <div>
+    <ShoppingCart />
+  </div>
 </template>
 
 <script lang="ts" src="./Home.ts" />
