@@ -1,5 +1,6 @@
 import axios from "axios";
 import config from "@/api/config";
+import { Response } from "@/model/Response";
 
 const instance = axios.create({
   baseURL: config.baseUrl.default,
@@ -7,12 +8,12 @@ const instance = axios.create({
 });
 
 // get
-export async function get<T>(url: string, params: any = {}): Promise<T> {
-  return new Promise<T>((resolve, reject) => {
+export async function get<T>(url: string, params: any = {}): Promise<Response<T>> {
+  return new Promise<Response<T>>((resolve, reject) => {
     instance
-      .get<T>(url, {params: params})
+      .get<Response<T>>(url, {params: params})
       .then(response => {
-        resolve(response.data as T);
+        resolve(response.data as Response<T>);
       })
       .catch(err => {
         reject(err)
@@ -21,13 +22,13 @@ export async function get<T>(url: string, params: any = {}): Promise<T> {
 }
 
 // post
-export async function post<T>(url: string, data: any = {}): Promise<T> {
-  return new Promise<T>((resolve, reject) => {
+export async function post<T>(url: string, data: any = {}): Promise<Response<T>> {
+  return new Promise<Response<T>>((resolve, reject) => {
     instance
       .post(url, data)
       .then(
         (response) => {
-          resolve(response.data as T);
+          resolve(response.data as Response<T>);
         },
         (err) => {
           reject(err);
