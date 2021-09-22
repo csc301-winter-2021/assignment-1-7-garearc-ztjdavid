@@ -1,5 +1,5 @@
 import { Vue } from "vue-class-component";
-import {Item} from "@/model/Item"
+import {Item} from "@/model/Item.ts"
 
 export default class LeftSide extends Vue {
   items: Item[] = [
