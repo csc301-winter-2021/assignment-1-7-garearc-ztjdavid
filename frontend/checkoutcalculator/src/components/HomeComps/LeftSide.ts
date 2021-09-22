@@ -6,7 +6,7 @@ export default class LeftSide extends Vue {
     {
       "name": "item1",
       "icon": "coffee",
-      "quantity": 0
+      "quantity": 3
     },
     {
       "name": "item2",
@@ -26,13 +26,10 @@ export default class LeftSide extends Vue {
   ]
 
   CannotDrop(quantity: number): boolean{
-    return quantity <= 0;
+    return quantity <= 1;
   }
 
   DropQ(item: Item): void{
-    if(item.quantity === 1){
-      this.DelItem(item);
-    }
     item.quantity -= 1;
   }
   AddQ(item: Item): void{
