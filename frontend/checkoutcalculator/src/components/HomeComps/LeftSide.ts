@@ -1,16 +1,12 @@
 import { Vue } from "vue-class-component";
+import {Item} from "@/model/Item"
 
-interface item{
-  name: string,
-  icon: string,
-  quantity: number
-}
 export default class LeftSide extends Vue {
-  items: item[] = [
+  items: Item[] = [
     {
       "name": "item1",
       "icon": "coffee",
-      "quantity": 3
+      "quantity": 0
     },
     {
       "name": "item2",
@@ -21,6 +17,11 @@ export default class LeftSide extends Vue {
       "name": "item3",
       "icon": "coffee",
       "quantity": 1
+    },
+    {
+      "name": "item4",
+      "icon": "coffee",
+      "quantity": 2
     }
   ]
 
@@ -28,16 +29,16 @@ export default class LeftSide extends Vue {
     return quantity <= 0;
   }
 
-  DropQ(item: item): void{
+  DropQ(item: Item): void{
     if(item.quantity === 1){
       this.DelItem(item);
     }
     item.quantity -= 1;
   }
-  AddQ(item: item): void{
+  AddQ(item: Item): void{
     item.quantity += 1;
   }
-  DelItem(item: item): void{
+  DelItem(item: Item): void{
     this.items = this.items.filter(value => value != item);
   }
 
