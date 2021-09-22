@@ -1,12 +1,8 @@
 import { Vue } from "vue-class-component";
+import {Item} from "@/model/Item.ts"
 
-interface item{
-  name: string,
-  icon: string,
-  quantity: number
-}
 export default class LeftSide extends Vue {
-  items: item[] = [
+  items: Item[] = [
     {
       "name": "item1",
       "icon": "coffee",
@@ -21,23 +17,25 @@ export default class LeftSide extends Vue {
       "name": "item3",
       "icon": "coffee",
       "quantity": 1
+    },
+    {
+      "name": "item4",
+      "icon": "coffee",
+      "quantity": 2
     }
   ]
 
   CannotDrop(quantity: number): boolean{
-    return quantity <= 0;
+    return quantity <= 1;
   }
 
-  DropQ(item: item): void{
-    if(item.quantity === 1){
-      this.DelItem(item);
-    }
+  DropQ(item: Item): void{
     item.quantity -= 1;
   }
-  AddQ(item: item): void{
+  AddQ(item: Item): void{
     item.quantity += 1;
   }
-  DelItem(item: item): void{
+  DelItem(item: Item): void{
     this.items = this.items.filter(value => value != item);
   }
 
