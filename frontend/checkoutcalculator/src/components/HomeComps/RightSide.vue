@@ -4,7 +4,6 @@
       <h3 class="card-title title">Summary</h3>
       <div class="row justify-content-center">
         <div class="col-sm-auto">
-          <span></span>
         </div>
       </div>
     </div>
