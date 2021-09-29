@@ -15,7 +15,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-for="item in items" :key="item.name">
+          <tr v-for="item in order.orderList" :key="item.name">
             <td>
               <div class="row justify-content-center">
                 <div class="col-sm-auto">

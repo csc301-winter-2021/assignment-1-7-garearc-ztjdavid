@@ -3,5 +3,6 @@ export interface Item{
   price: number,
   icon: string,
   isTaxed: boolean,
-  quantity: number
+  quantity: number,
+  discount: number
 }

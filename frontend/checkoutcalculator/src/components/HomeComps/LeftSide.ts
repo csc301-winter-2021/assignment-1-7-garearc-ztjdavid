@@ -1,52 +1,26 @@
 import { Vue } from "vue-class-component";
 import {Item} from "@/model/Item.ts"
+import { Inject } from "vue-property-decorator";
+import { Order } from "@/model/Order";
 
 export default class LeftSide extends Vue {
-  quantityUpdated = false;
+  @Inject()
+  order!: Order
 
-  items: Item[] = [
-    {
-      name: "item1",
-      price: 1.2,
-      icon: "coffee",
-      quantity: 3,
-      isTaxed: false
-    },
-    {
-      name: "item2",
-      price: 22,
-      icon: "coffee",
-      quantity: 1,
-      isTaxed: true
-    },
-    {
-      name: "item3",
-      price: 2.2,
-      icon: "coffee",
-      quantity: 2,
-      isTaxed: false
-    },
-    {
-      name: "item4",
-      price: 10,
-      icon: "coffee",
-      quantity: 10,
-      isTaxed: true
-    }
-  ]
+  quantityUpdated = false;
 
   CannotDrop(quantity: number): boolean{
     return quantity <= 1;
   }
 
   DropQ(item: Item): void{
-    item.quantity -= 1;
+    this.order.DropQ(item);
   }
   AddQ(item: Item): void{
-    item.quantity += 1;
+    this.order.AddQ(item);
   }
   DelItem(item: Item): void{
-    this.items = this.items.filter(value => value != item);
+    this.order.DelItem(item);
   }
   QuantityUpdated(): void{
     this.quantityUpdated = true;
