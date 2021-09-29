@@ -1,5 +1,8 @@
 export interface Item{
   name: string,
+  price: number,
   icon: string,
-  quantity: number
+  isTaxed: boolean,
+  quantity: number,
+  discount: number
 }

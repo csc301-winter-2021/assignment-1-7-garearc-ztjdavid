@@ -1,3 +1,5 @@
 export interface Response<T> {
-  metadata: T
+  metadata: T,
+  responseTime: string,
+  code: number
 }
