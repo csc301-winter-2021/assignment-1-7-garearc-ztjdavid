@@ -46,7 +46,7 @@ export default class Home extends Vue {
     }
   ]
 
-  Order: Order = new Order(undefined, undefined, this.items, undefined);
+  Order: Order = new Order("22", undefined, this.items, undefined);
 
 
   @Provide()
