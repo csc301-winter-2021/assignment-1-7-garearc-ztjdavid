@@ -22,7 +22,7 @@ export async function get<T>(url: string, params: any = {}): Promise<Response<T>
 }
 
 // post
-export async function post<T>(url: string, data: any = {}): Promise<Response<T>> {
+export async function post<T, M>(url: string, data: M): Promise<Response<T>> {
   return new Promise<Response<T>>((resolve, reject) => {
     instance
       .post(url, data)
