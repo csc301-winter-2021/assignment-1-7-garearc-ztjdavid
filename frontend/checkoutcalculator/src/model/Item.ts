@@ -1,11 +1,8 @@
 export interface Item{
   name: string,
+  price: number,
   icon: string,
-<<<<<<< Updated upstream
-  quantity: number
-=======
   isTaxed: boolean,
   quantity: number,
   discount: number
->>>>>>> Stashed changes
 }

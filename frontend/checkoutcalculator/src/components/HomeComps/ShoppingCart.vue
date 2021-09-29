@@ -9,11 +9,11 @@
 <!--    body-->
     <div class="row body justify-content-around">
 <!--      left part-->
-      <div class="col-sm-8">
+      <div class="col col-xl-8 col-sm-12">
         <LeftSide />
       </div>
 <!--      right part-->
-      <div class="col-sm-4">
+      <div class="col col-xl-4 col-sm-12">
         <RightSide />
       </div>
     </div>
