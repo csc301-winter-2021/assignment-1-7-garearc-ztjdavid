@@ -11,15 +11,16 @@
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
             <th scope="col">Taxed</th>
+            <th scope="col">Discount</th>
             <th scope="col">Operations</th>
           </tr>
           </thead>
           <tbody>
           <tr v-for="item in order.orderList" :key="item.name">
             <td>
-              <div class="row justify-content-center">
+              <div class="row justify-content-start">
                 <div class="col-sm-auto">
-                  <font-awesome-icon icon="coffee"/>
+                  <font-awesome-icon :icon="item.icon"/>
                 </div>
                 <div class="col-sm-auto">
                   <div>{{ item.name }}</div>
@@ -30,11 +31,14 @@
               <span>{{ item.price }}</span>
             </td>
             <td>
-              <span >{{ item.quantity }}</span>
+              <span>{{ item.quantity }}</span>
             </td>
             <td>
               <font-awesome-icon v-if="item.isTaxed" icon="check" class="check"/>
               <font-awesome-icon v-else icon="times" class="cross"/>
+            </td>
+            <td>
+              <span>{{ DiscountFormatter(item.discount) }}</span>
             </td>
             <td>
               <div class="row justify-content-center">

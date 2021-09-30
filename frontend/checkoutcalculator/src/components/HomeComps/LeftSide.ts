@@ -25,5 +25,9 @@ export default class LeftSide extends Vue {
   QuantityUpdated(): void{
     this.quantityUpdated = true;
   }
+  DiscountFormatter(dis: number): string{
+    return `${dis * 100}%OFF`;
+  }
+
 
 }

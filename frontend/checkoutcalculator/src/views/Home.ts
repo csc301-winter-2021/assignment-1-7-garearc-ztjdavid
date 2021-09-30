@@ -4,10 +4,11 @@ import ShoppingCart from "@/components/HomeComps/ShoppingCart.vue";
 import { Item } from "@/model/Item";
 import { Provide } from "vue-property-decorator";
 import {Order} from "@/model/Order";
+import { getOrder } from "@/api/request";
 
 @Options({
   components: {
-    ShoppingCart
+    ShoppingCart,
   },
 })
 export default class Home extends Vue {
@@ -18,7 +19,7 @@ export default class Home extends Vue {
       icon: "coffee",
       quantity: 3,
       isTaxed: false,
-      discount: 0
+      discount: 0.2
     },
     {
       name: "item2",
@@ -51,5 +52,12 @@ export default class Home extends Vue {
 
   @Provide()
   order = this.Order
+
+  async LoadOrder(uuid: string): Promise<void>{
+    console.log("MONKAW");
+    await getOrder(uuid)
+      .then(value => this.Order = Object.assign({}, value.metadata))
+      .catch(err => console.log(err));
+  }
 
 }
