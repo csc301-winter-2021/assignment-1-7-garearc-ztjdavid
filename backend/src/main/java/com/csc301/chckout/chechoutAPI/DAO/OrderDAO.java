@@ -30,4 +30,8 @@ public class OrderDAO implements IDAO<Order>{
         }
         return true;
     }
+
+    public List<Order> getCopy(){
+        return new ArrayList<>(this.orderList);
+    }
 }

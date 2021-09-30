@@ -1,6 +1,7 @@
 package com.csc301.chckout.chechoutAPI.Resource;
 
 import com.csc301.chckout.chechoutAPI.Entity.Order;
+import com.csc301.chckout.chechoutAPI.Entity.Record;
 import com.csc301.chckout.chechoutAPI.Entity.Response;
 import com.csc301.chckout.chechoutAPI.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +29,12 @@ public class OrderResourse {
         res.setMetadata(orderService.getOrderByUUID(uuid));
         return res;
     }
+
+    @GetMapping("/order/records")
+    public Response<List<Record>> getRecords(){
+        Response<List<Record>> res = new Response<>();
+        res.setMetadata(orderService.getRecords());
+        return res;
+    }
+
 }
