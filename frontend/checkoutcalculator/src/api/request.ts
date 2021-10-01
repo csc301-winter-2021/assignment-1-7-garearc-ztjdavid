@@ -9,7 +9,7 @@ export async function uploadOrder(order: Order): Promise<Response<boolean>> {
 export async function getRecords(): Promise<Response<Record[]>>{
   return get<Record[]>("/order/records");
 }
-export async function getOrder(uuid:string): Promise<Response<Order>>{
-  return get<Order>(`/order/${uuid}`);
+export async function getOrder(uuid:string): Promise<Response<Order[]>>{
+  return get<Order[]>(`/order/${uuid}`);
 }
 

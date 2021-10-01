@@ -25,14 +25,14 @@ export default class LoadSection extends Vue {
   }
 
   async LoadOrder(uuid: string): Promise<void>{
-    console.log(this.order.client);
-    this.order.client = "LOL";
-    console.log(this.order.client);
     if(this.selected === null) return;
     await getOrder(uuid)
-      .then(value => this.order = value.metadata)
+      .then(value => {
+        console.log(value.metadata);
+        if (value.metadata.length === 0) return;
+        this.order = value.metadata[0];
+      })
       .catch(err => console.log(err));
-    console.log(this.order);
   }
 
   getDropDownSelectedText(): string{
