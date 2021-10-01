@@ -2,6 +2,7 @@ package com.csc301.chckout.chechoutAPI.Service;
 
 import com.csc301.chckout.chechoutAPI.DAO.OrderDAO;
 import com.csc301.chckout.chechoutAPI.Entity.Order;
+import com.csc301.chckout.chechoutAPI.Entity.OrderSummary;
 import com.csc301.chckout.chechoutAPI.Entity.Record;
 import com.csc301.chckout.chechoutAPI.Util.OrderUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,11 @@ public class OrderService {
         return orderDAO.getCopy().stream()
                 .map(order -> new Record(order.getUuid(), order.getDate()))
                 .collect(Collectors.toList());
+    }
+
+    public OrderSummary getSummary(String uuid){
+        List<Order> oL = getOrderByUUID(uuid);
+        if(oL.isEmpty()) return null;
+        return orderUtils.getSummary(oL.get(0));
     }
 }

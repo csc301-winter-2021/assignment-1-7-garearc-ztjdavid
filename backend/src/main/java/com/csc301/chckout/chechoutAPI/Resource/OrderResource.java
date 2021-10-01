@@ -1,9 +1,11 @@
 package com.csc301.chckout.chechoutAPI.Resource;
 
 import com.csc301.chckout.chechoutAPI.Entity.Order;
+import com.csc301.chckout.chechoutAPI.Entity.OrderSummary;
 import com.csc301.chckout.chechoutAPI.Entity.Record;
 import com.csc301.chckout.chechoutAPI.Entity.Response;
 import com.csc301.chckout.chechoutAPI.Service.OrderService;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +36,13 @@ public class OrderResource {
     public Response<List<Record>> getRecords(){
         Response<List<Record>> res = new Response<>();
         res.setMetadata(orderService.getRecords());
+        return res;
+    }
+
+    @GetMapping("/order/summary/{uuid}")
+    public Response<OrderSummary> getSummary(@PathVariable String uuid){
+        Response<OrderSummary> res = new Response<>();
+        res.setMetadata(orderService.getSummary(uuid));
         return res;
     }
 
