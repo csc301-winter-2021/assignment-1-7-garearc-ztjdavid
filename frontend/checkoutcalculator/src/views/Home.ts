@@ -4,7 +4,6 @@ import ShoppingCart from "@/components/HomeComps/ShoppingCart.vue";
 import { Item } from "@/model/Item";
 import { Provide } from "vue-property-decorator";
 import {Order} from "@/model/Order";
-import { getOrder } from "@/api/request";
 
 @Options({
   components: {
@@ -52,12 +51,5 @@ export default class Home extends Vue {
 
   @Provide()
   order = this.Order
-
-  async LoadOrder(uuid: string): Promise<void>{
-    console.log("MONKAW");
-    await getOrder(uuid)
-      .then(value => this.Order = Object.assign({}, value.metadata))
-      .catch(err => console.log(err));
-  }
 
 }

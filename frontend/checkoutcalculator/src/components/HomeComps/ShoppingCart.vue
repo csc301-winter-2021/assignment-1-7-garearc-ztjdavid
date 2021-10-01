@@ -10,7 +10,7 @@
 <!--    add item section-->
     <div class="row justify-content-center">
       <div class="col-md-6 col-12">
-        <AddItemSection @load-order="LoadOrderEvent"/>
+        <AddItemSection />
       </div>
       <div class="col-md-6 col-12">
         <LoadSection />

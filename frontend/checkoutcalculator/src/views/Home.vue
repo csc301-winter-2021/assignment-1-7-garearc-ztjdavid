@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ShoppingCart @load-order="LoadOrder"/>
+    <ShoppingCart />
   </div>
 </template>
 

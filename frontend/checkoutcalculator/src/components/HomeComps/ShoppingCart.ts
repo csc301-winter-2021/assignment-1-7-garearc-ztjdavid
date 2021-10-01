@@ -13,7 +13,4 @@ import LoadSection from "@/components/HomeComps/LoadSection.vue";
   }
 })
 export default class ShoppingCart extends Vue {
-  LoadOrderEvent(uuid: string): void{
-    this.$emit("load-order", uuid);
-  }
 }
