@@ -1,11 +1,10 @@
 import { Vue } from "vue-class-component";
 import {Item} from "@/model/Item.ts"
-import { Inject } from "vue-property-decorator";
+import { Prop } from "vue-property-decorator";
 import { Order } from "@/model/Order";
 
 export default class LeftSide extends Vue {
-  @Inject()
-  order!: Order
+  @Prop() order!: Order
 
   quantityUpdated = false;
 
@@ -28,6 +27,8 @@ export default class LeftSide extends Vue {
   DiscountFormatter(dis: number): string{
     return `${dis * 100}%OFF`;
   }
-
+  test():void{
+    console.log(this.order);
+  }
 
 }

@@ -1,12 +1,11 @@
 import { Vue } from "vue-class-component";
-import { Inject } from "vue-property-decorator";
+import { Prop } from "vue-property-decorator";
 import { Order } from "@/model/Order";
 import { Item } from "@/model/Item";
 
 
 export default class AddItemSection extends Vue {
-  @Inject()
-  order!: Order
+  @Prop() order!: Order;
 
   currItem = {
     discount: "0.1",

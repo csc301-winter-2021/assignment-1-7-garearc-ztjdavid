@@ -26,7 +26,7 @@
         </div>
 <!--        load button-->
         <div class="col-sm-3 col-12 d-flex justify-content-start">
-          <button class="btn btn-primary" @click="LoadOrder">Load</button>
+          <button class="btn btn-primary" @click="LoadOrderEvent">Load</button>
         </div>
       </div>
     </div>

@@ -1,12 +1,11 @@
 import { Vue } from "vue-class-component";
 import { Record } from "@/model/Record";
-import { getOrder, getRecords } from "@/api/request";
-import { Inject } from "vue-property-decorator";
+import { getRecords } from "@/api/request";
+import { Prop } from "vue-property-decorator";
 import { Order } from "@/model/Order";
 
 export default class LoadSection extends Vue {
-  @Inject()
-  order!: Order;
+  @Prop() order!: Order
 
   records: Record[] = [];
   selected: Record | null = null;
@@ -24,15 +23,8 @@ export default class LoadSection extends Vue {
     }
   }
 
-  async LoadOrder(uuid: string): Promise<void>{
-    if(this.selected === null) return;
-    await getOrder(uuid)
-      .then(value => {
-        console.log(value.metadata);
-        if (value.metadata.length === 0) return;
-        this.order = value.metadata[0];
-      })
-      .catch(err => console.log(err));
+  LoadOrderEvent(): void{
+    if(this.selected !== null) this.$emit("load-order", this.selected.uuid);
   }
 
   getDropDownSelectedText(): string{

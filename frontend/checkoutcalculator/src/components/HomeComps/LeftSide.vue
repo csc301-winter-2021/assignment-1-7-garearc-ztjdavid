@@ -3,6 +3,7 @@
     <div class="card-body">
       <h3 class="card-title title">Shopping Cart</h3>
       <hr />
+      <button class="btn btn-danger" @click="test">A</button>
       <div class="table-responsive-md">
         <table class="table table-striped align-middle">
           <thead>
