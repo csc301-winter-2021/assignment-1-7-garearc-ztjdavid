@@ -14,13 +14,15 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Item {
     @JsonProperty(value = "name")
-    private String name = "";
+    private String name;
     @JsonProperty(value = "price")
-    private double price = 0.0;
+    private double price;
     @JsonProperty(value = "icon")
-    private String icon = "coffee";
+    private String icon;
     @JsonProperty(value = "isTaxed")
-    private boolean isTaxed = false;
+    private boolean isTaxed;
     @JsonProperty(value = "quantity")
-    private int quantity = 1;
+    private int quantity;
+    @JsonProperty(value = "discount")
+    private double discount;
 }

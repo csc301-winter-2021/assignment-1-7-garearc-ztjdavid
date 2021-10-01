@@ -16,7 +16,7 @@ public class Order {
     @JsonProperty(value = "orderList")
     private List<Item> orderList;
     @JsonProperty(value = "client")
-    private String client = "Unknown Client";
+    private String client;
     @JsonProperty(value = "date")
-    private String date = "";
+    private String date;
 }
