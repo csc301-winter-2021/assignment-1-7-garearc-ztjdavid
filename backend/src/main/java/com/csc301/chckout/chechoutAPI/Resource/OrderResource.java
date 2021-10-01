@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 10000)
 @RequestMapping("/api")
-public class OrderResourse {
+public class OrderResource {
     @Autowired
     private OrderService orderService;
 
