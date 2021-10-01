@@ -4,7 +4,7 @@ import { Response } from "@/model/Response";
 
 const instance = axios.create({
   baseURL: config.baseUrl.default,
-  timeout: 10000
+  timeout: 3600,
 });
 
 // get

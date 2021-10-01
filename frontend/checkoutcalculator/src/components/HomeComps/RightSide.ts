@@ -1,20 +1,14 @@
 import { Vue } from "vue-class-component";
-import { Inject } from "vue-property-decorator";
+import { Prop } from "vue-property-decorator";
 import { Order } from "@/model/Order";
-import { uploadOrder } from "@/api/request";
+import { OrderSummary } from "@/model/OrderSummary";
 
 export default class RightSide extends Vue {
-  @Inject()
-  order!: Order
+  @Prop() order!: Order;
+  @Prop() os!: OrderSummary | null;
 
-  response = false
-
-
-  uploadOrder() {
-    uploadOrder(this.order)
-      .then(value => this.response = value.metadata)
-      .catch(error => {
-        console.log(error)
-      })
+  showSummary():string{
+    if(this.os === null) return "Please upload current order or load a history order.";
+    return `Total price: ${this.os.total}`;
   }
 }

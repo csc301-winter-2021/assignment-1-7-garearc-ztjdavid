@@ -3,7 +3,12 @@
     <div class="card-body">
       <h3 class="card-title title">Shopping Cart</h3>
       <hr />
-      <div class="table-responsive-md">
+      <div class="row justify-content-center">
+        <div class="col-12 d-flex justify-content-center">
+          <button class="btn btn-primary button-upload" @click="uploadOrder">Upload Order</button>
+        </div>
+      </div>
+      <div class="table-responsive-md table-wrapper">
         <table class="table table-striped align-middle">
           <thead>
           <tr>
@@ -11,15 +16,16 @@
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
             <th scope="col">Taxed</th>
+            <th scope="col">Discount</th>
             <th scope="col">Operations</th>
           </tr>
           </thead>
           <tbody>
           <tr v-for="item in order.orderList" :key="item.name">
             <td>
-              <div class="row justify-content-center">
+              <div class="row justify-content-start">
                 <div class="col-sm-auto">
-                  <font-awesome-icon icon="coffee"/>
+                  <font-awesome-icon :icon="item.icon"/>
                 </div>
                 <div class="col-sm-auto">
                   <div>{{ item.name }}</div>
@@ -30,11 +36,14 @@
               <span>{{ item.price }}</span>
             </td>
             <td>
-              <span >{{ item.quantity }}</span>
+              <span>{{ item.quantity }}</span>
             </td>
             <td>
               <font-awesome-icon v-if="item.isTaxed" icon="check" class="check"/>
               <font-awesome-icon v-else icon="times" class="cross"/>
+            </td>
+            <td>
+              <span>{{ DiscountFormatter(item.discount) }}</span>
             </td>
             <td>
               <div class="row justify-content-center">
@@ -67,11 +76,19 @@
 @keyframes updated {
   50% {font-weight: bolder; color: crimson}
 }
-
 button {
   width: 60px;
   margin-top: 2px;
   margin-bottom: 2px;
+}
+.table-wrapper {
+  min-height: 300px;
+  max-height: 300px;
+  overflow: scroll;
+}
+.button-upload {
+  width: auto;
+  margin: auto;
 }
 .title {
   text-decoration: underline;
