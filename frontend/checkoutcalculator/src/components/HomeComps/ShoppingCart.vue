@@ -13,18 +13,18 @@
         <AddItemSection :order="order"/>
       </div>
       <div class="col-md-6 col-12">
-        <LoadSection :order="order" @load-order="LoadOrderEvent"/>
+        <LoadSection :order="order" @load-order="LoadOrderEvent" @load-summary="LoadSummaryEvent"/>
       </div>
     </div>
 <!--    shopping cart and summary-->
     <div class="row justify-content-around">
 <!--      left part-->
       <div class="col col-xl-8 col-sm-12">
-        <LeftSide :order="order"/>
+        <LeftSide :order="order" @load-summary="LoadSummaryEvent"/>
       </div>
 <!--      right part-->
       <div class="col col-xl-4 col-sm-12">
-        <RightSide :order="order"/>
+        <RightSide :order="order" :os="os"/>
       </div>
     </div>
   </div>

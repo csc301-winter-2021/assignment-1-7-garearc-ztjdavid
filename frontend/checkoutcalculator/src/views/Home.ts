@@ -17,12 +17,7 @@ export default class Home extends Vue {
       .then(value => {
         if (value.metadata.length === 0) return;
         Object.assign(this.Order, value.metadata[0]);
-        console.log(this.Order);
       })
       .catch(err => console.log(err));
-  }
-
-  test():void{
-    console.log(this.Order);
   }
 }

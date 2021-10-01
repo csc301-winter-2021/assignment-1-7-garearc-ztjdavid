@@ -3,8 +3,8 @@
     <div class="card-body">
       <h3 class="card-title title">Summary</h3>
       <div class="row justify-content-center">
-        <div class="col-sm-auto">
-          <button class="btn btn-primary" @click="uploadOrder">Upload</button>
+        <div class="col">
+          <div>{{showSummary()}}</div>
         </div>
       </div>
     </div>

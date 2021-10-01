@@ -1,6 +1,6 @@
 import { Vue } from "vue-class-component";
 import { Record } from "@/model/Record";
-import { getRecords } from "@/api/request";
+import { getRecords, getSummary } from "@/api/request";
 import { Prop } from "vue-property-decorator";
 import { Order } from "@/model/Order";
 
@@ -24,7 +24,11 @@ export default class LoadSection extends Vue {
   }
 
   LoadOrderEvent(): void{
-    if(this.selected !== null) this.$emit("load-order", this.selected.uuid);
+    if(this.selected === null) return;
+    this.$emit("load-order", this.selected.uuid);
+    getSummary(this.selected.uuid)
+      .then(value => this.$emit("load-summary", value.metadata))
+    ;
   }
 
   getDropDownSelectedText(): string{
