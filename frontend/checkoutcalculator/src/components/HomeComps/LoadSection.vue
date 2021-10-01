@@ -5,13 +5,13 @@
     <div class="card-body">
       <div class="row justify-content-center">
 <!--        refresh button-->
-        <div class="col-12 col-sm-3 d-flex justify-content-end">
+        <div class="col-12 col-lg-auto d-flex justify-content-center">
           <button class="btn btn-info" @click="RequestRecords">
             <font-awesome-icon icon="sync" />
           </button>
         </div>
 <!--        drop downs-->
-        <div class="col-sm-3 col-12 d-flex justify-content-center">
+        <div class="col-lg-auto col-12 d-flex justify-content-center">
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
               {{ getDropDownSelectedText() }}
@@ -25,7 +25,7 @@
           </div>
         </div>
 <!--        load button-->
-        <div class="col-sm-3 col-12 d-flex justify-content-start">
+        <div class="col-lg-auto col-12 d-flex justify-content-center">
           <button class="btn btn-primary" @click="LoadOrderEvent">Load</button>
         </div>
       </div>
@@ -39,6 +39,8 @@
 .title {
   text-decoration: underline;
 }
-.btn-info {
+button {
+  width: auto;
+  margin: 1%;
 }
 </style>
