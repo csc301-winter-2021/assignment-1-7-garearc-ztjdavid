@@ -22,13 +22,13 @@ public class OrderDAO implements IDAO<Order>{
     }
 
     @Override
-    public Boolean add(Order order) {
+    public String add(Order order) {
         try{
             orderList.add(order);
         }catch (Exception e){
-            return false;
+            return null;
         }
-        return true;
+        return order.getUuid();
     }
 
     public List<Order> getCopy(){

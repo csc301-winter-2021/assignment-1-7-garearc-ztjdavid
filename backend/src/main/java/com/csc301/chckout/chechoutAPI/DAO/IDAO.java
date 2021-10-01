@@ -5,5 +5,5 @@ import java.util.List;
 public interface IDAO<T> {
     List<T> get(String uuid);
 
-    Boolean add(T object);
+    String add(T object);
 }

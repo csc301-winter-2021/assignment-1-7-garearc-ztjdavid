@@ -19,8 +19,8 @@ public class OrderResource {
     private OrderService orderService;
 
     @PostMapping("/order")
-    public Response<Boolean> addNewOrder(@RequestBody Order order){
-        Response<Boolean> res = new Response<>();
+    public Response<String> addNewOrder(@RequestBody Order order){
+        Response<String> res = new Response<>();
         res.setMetadata(orderService.addNewOrder(order));
         return res;
     }

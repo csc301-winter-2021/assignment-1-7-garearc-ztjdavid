@@ -22,7 +22,7 @@ public class OrderService {
         return orderDAO.get(uuid);
     }
 
-    public Boolean addNewOrder(Order order){
+    public String addNewOrder(Order order){
         orderUtils.fillAll(order);
         return orderDAO.add(order);
     }
