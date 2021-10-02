@@ -62,9 +62,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
           
       - name: Tesing
-        run: mvn -B test
+        run: mvnw -B test
       
       - name: Building
-        run: mvn -B clean package
+        run: mvnw -B clean package
         
       - run: echo "Done CI for backend."
