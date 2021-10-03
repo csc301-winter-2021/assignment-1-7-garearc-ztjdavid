@@ -3,15 +3,13 @@ package com.csc301.chckout.chechoutAPI.DAO;
 import com.csc301.chckout.chechoutAPI.Entity.Order;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Repository
 public class OrderDAO implements IDAO<Order>{
-    private final List<Order> orderList = new ArrayList<>();
+    private final int max_storage = 20;
+    private final Deque<Order> orderList = new LinkedList<>();
 
     @Override
     public List<Order> get(String uuid) {
@@ -23,8 +21,11 @@ public class OrderDAO implements IDAO<Order>{
 
     @Override
     public String add(Order order) {
+        if(orderList.size() >= max_storage){
+            orderList.pollLast();
+        }
         try{
-            orderList.add(order);
+            orderList.addFirst(order);
         }catch (Exception e){
             return null;
         }
