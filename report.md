@@ -13,4 +13,9 @@
 + CI/CD
     + Between Travis CI, Circle CI, and Git Action, our group picked Git Action. Both Travis CI and Circle CI are more targeted at enterprise-level users. They are only free for open-source projects. Therefore, the community support for these two tools is not as accessible as Git Action. My group is completely new to CI/CD, hence easy to use is our priority. In this regard, Git Action is incorporated into Github and can generate the YML file smoothly after pushing our codes on the Github Repository.
 
++ Database
+  + In assignment one, we did not include a database. To plan ahead, we decided to use PostgreSQL instead of MongoDB or MySQL. We have more experience with PostgreSQL since it is taught in a database course which we are both taking. We learned that PostgreSQL supports more different data types by using a relational database management system, whereas MySQL and MongoDB are limited in this aspect for using a purely relational and a document database system respectively. We also found out that PostgreSQL genuinely has better performance with complex queries and a high number of client connections. Despite MySQL is more intuitive to learn for people with experience in javascript, its support plans from Oracle are paid. Overall, PostgreSQL fits our project the best.
+
+
+
 
