@@ -10,21 +10,21 @@
 <!--    add item section-->
     <div class="row justify-content-center">
       <div class="col-md-6 col-12">
-        <AddItemSection :order="order"/>
+        <AddItemSection />
       </div>
       <div class="col-md-6 col-12">
-        <LoadSection :order="order" @load-order="LoadOrderEvent" @load-summary="LoadSummaryEvent"/>
+        <LoadSection />
       </div>
     </div>
 <!--    shopping cart and summary-->
     <div class="row justify-content-around">
 <!--      left part-->
       <div class="col col-xl-8 col-sm-12">
-        <LeftSide :order="order" @load-summary="LoadSummaryEvent"/>
+        <LeftSide />
       </div>
 <!--      right part-->
       <div class="col col-xl-4 col-sm-12">
-        <RightSide :order="order" :os="os"/>
+        <RightSide />
       </div>
     </div>
   </div>

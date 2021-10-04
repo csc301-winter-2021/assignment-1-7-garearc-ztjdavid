@@ -5,7 +5,7 @@
       <hr />
       <div class="row justify-content-center">
         <div class="col-12 d-flex justify-content-center">
-          <button class="btn btn-primary button-upload" @click="uploadOrder">Upload Order</button>
+          <button class="btn btn-primary button-upload" @click="scm.UploadOrder">Upload Order</button>
         </div>
       </div>
       <div class="table-responsive-md table-wrapper">
@@ -21,7 +21,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-for="item in order.orderList" :key="item.name">
+          <tr v-for="item in scm.Order.orderList" :key="item.name">
             <td>
               <div class="row justify-content-start">
                 <div class="col-sm-auto">
@@ -49,16 +49,16 @@
               <div class="row justify-content-center">
                 <div class="col col-xxl col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <button class="btn btn-primary btn-sm"
-                          @click="AddQ(item)">+</button>
+                          @click="scm.AddQ(item)">+</button>
                 </div>
                 <div class="col col-xxl col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <button class="btn btn-primary btn-sm"
                           :disabled="CannotDrop(item.quantity)"
-                          @click="DropQ(item)">-</button>
+                          @click="scm.DropQ(item)">-</button>
                 </div>
                 <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <button class="btn btn-danger btn-sm"
-                          @click="DelItem(item)">delete</button>
+                          @click="scm.DelItem(item)">delete</button>
                 </div>
               </div>
             </td>

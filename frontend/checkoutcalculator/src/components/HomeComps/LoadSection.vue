@@ -17,7 +17,7 @@
               {{ getDropDownSelectedText() }}
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-              <li v-for="record in records" :key="record">
+              <li v-for="record in scm.Records" :key="record">
                 <button class="dropdown-item" type="button"
                         @click="updateSelected(record)">{{record.date}}</button>
               </li>
@@ -26,7 +26,7 @@
         </div>
 <!--        load button-->
         <div class="col-lg-auto col-12 d-flex justify-content-center">
-          <button class="btn btn-primary" @click="LoadOrderEvent">Load</button>
+          <button class="btn btn-primary" @click="scm.LoadOrder(selected)">Load</button>
         </div>
       </div>
     </div>
