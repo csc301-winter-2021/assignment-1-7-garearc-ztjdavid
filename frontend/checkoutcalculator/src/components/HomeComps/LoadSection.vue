@@ -6,7 +6,7 @@
       <div class="row justify-content-center">
 <!--        refresh button-->
         <div class="col-12 col-lg-auto d-flex justify-content-center">
-          <button class="btn btn-info" @click="RequestRecords">
+          <button class="btn btn-info" @click="scm.LoadRecords()">
             <font-awesome-icon icon="sync" />
           </button>
         </div>
@@ -14,7 +14,7 @@
         <div class="col-lg-auto col-12 d-flex justify-content-center">
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
-              {{ getDropDownSelectedText() }}
+              {{ scm.getDropDownSelectedText }}
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
               <li v-for="record in scm.Records" :key="record">
@@ -26,7 +26,7 @@
         </div>
 <!--        load button-->
         <div class="col-lg-auto col-12 d-flex justify-content-center">
-          <button class="btn btn-primary" @click="scm.LoadOrder(selected)">Load</button>
+          <button class="btn btn-primary" @click="scm.LoadOrder">Load</button>
         </div>
       </div>
     </div>

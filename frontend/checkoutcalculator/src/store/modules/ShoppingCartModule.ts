@@ -1,4 +1,4 @@
-import {Module, Mutation, VuexModule} from "vuex-module-decorators";
+import {Action, Module, Mutation, VuexModule} from "vuex-module-decorators";
 import store from "@/store";
 import {Order} from "@/model/Order";
 import {OrderSummary} from "@/model/OrderSummary";
@@ -11,6 +11,11 @@ export default class ShoppingCartModule extends VuexModule {
     Order: Order = new Order();
     Summary: OrderSummary | null = null;
     Records: Record[] = [];
+    selectedRecord: Record | null = null;
+
+    get getDropDownSelectedText(): string{
+        return this.selectedRecord === null? "No Record" : this.selectedRecord.date;
+    }
 
     @Mutation
     DropQ(item: Item): void{
@@ -29,12 +34,28 @@ export default class ShoppingCartModule extends VuexModule {
         this.Order.AddItem(item);
     }
     @Mutation
-    async LoadSummary(uuid: string):Promise<void> {
-        await getSummary(uuid)
-            .then(value => this.Summary = value.metadata)
-            .catch(err => console.log(err));
+    setOrder(newOrder: Order):void{
+        Object.assign(this.Order, newOrder);
     }
     @Mutation
+    setRecords(newRecords: Record[]):void{
+        this.Records = newRecords;
+    }
+    @Mutation
+    setSummary(newSummary: OrderSummary):void{
+        this.Summary = newSummary;
+    }
+    @Mutation
+    setSelectedRecord(r: Record):void{
+        this.selectedRecord = r;
+    }
+    @Action
+    async LoadSummary(uuid: string):Promise<void> {
+        await getSummary(uuid)
+            .then(value => this.setSummary(value.metadata))
+            .catch(err => console.log(err));
+    }
+    @Action
     async UploadOrder():Promise<void> {
         let uuid = "";
         await uploadOrder(this.Order)
@@ -43,24 +64,29 @@ export default class ShoppingCartModule extends VuexModule {
                 console.log(error)
             })
         await this.LoadSummary(uuid).then(value => value);
+        await this.LoadRecords();
     }
 
-    @Mutation
-    async LoadOrder(selected: Record): Promise<void>{
-        if(selected === null) return;
-        getOrder(selected.uuid)
+    @Action
+    async LoadRecords(): Promise<void>{
+        await getRecords()
+            .then(value => this.setRecords(value.metadata))
+            .catch(err => {console.log(err)});
+        if(this.selectedRecord === null && this.Records.length > 0){
+            this.setSelectedRecord(this.Records[0]);
+        }
+    }
+
+    @Action
+    async LoadOrder(): Promise<void>{
+        if(this.selectedRecord === null) return;
+        getOrder(this.selectedRecord.uuid)
             .then(value => {
                 if(value.metadata.length > 0){
-                    Object.assign(this.Order, value.metadata[0]);
+                    this.setOrder(value.metadata[0]);
                 }
             })
         ;
-    }
-    @Mutation
-    async LoadRecords(): Promise<void>{
-        await getRecords()
-            .then(value => this.Records = value.metadata)
-            .catch(err => {console.log(err)});
     }
 
 }
