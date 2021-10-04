@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5d7fb76-a4c8-401a-b625-ee6f54bb18bb" name="Changes" comment="clean main branch." />
+    <list default="true" id="e5d7fb76-a4c8-401a-b625-ee6f54bb18bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment 1 Summary.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSC301S2021- Introduction To Software Engineering-Assignment 1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Instruction.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/CheckoutApiApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/DAO/IDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/DAO/OrderDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/Entity/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/Entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/Entity/OrderSummary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/Entity/Record.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/Entity/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/Resource/OrderResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/Service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/csc301/chckout/chechoutAPI/Util/OrderUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/csc301/chckout/chechoutAPI/CheckoutApiApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/csc301/chckout/chechoutAPI/OrderResourceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/api/config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/api/http.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/api/request.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/AddItemSection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/AddItemSection.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/LeftSide.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/LeftSide.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/LoadSection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/LoadSection.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/RightSide.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/RightSide.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/ShoppingCart.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/components/HomeComps/ShoppingCart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/model/Item.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/model/Order.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/model/OrderSummary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/model/Record.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/model/Response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/router/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/shims-vue.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/views/Home.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/src/views/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/tests/unit/Home.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/checkoutcalculator/vue.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,12 +98,16 @@
     <option name="onto" value="be0da0ddbdf7af719ceea11ca816f34d02b86474" />
   </component>
   <component name="ProjectId" id="1yXqKxWh28erk93ie6ob2vfFVnM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -88,6 +153,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="clean main branch." />
     <option name="LAST_COMMIT_MESSAGE" value="clean main branch." />
   </component>
