@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ShoppingCart :order="Order" @load-order="LoadOrder"/>
+    <ShoppingCart />
   </div>
 </template>
 

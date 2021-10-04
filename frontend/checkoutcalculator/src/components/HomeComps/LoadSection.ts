@@ -1,13 +1,11 @@
 import { Vue } from "vue-class-component";
 import { Record } from "@/model/Record";
-import { getRecords, getSummary } from "@/api/request";
-import { Prop } from "vue-property-decorator";
-import { Order } from "@/model/Order";
+import {getModule} from "vuex-module-decorators";
+import ShoppingCartModule from "@/store/modules/ShoppingCartModule";
 
 export default class LoadSection extends Vue {
-  @Prop() order!: Order
+  scm = getModule(ShoppingCartModule);
 
-  records: Record[] = [];
   selected: Record | null = null;
 
   async mounted(): Promise<void> {
@@ -15,20 +13,10 @@ export default class LoadSection extends Vue {
   }
 
   async RequestRecords(): Promise<void>{
-    await getRecords()
-      .then(value => this.records = value.metadata)
-      .catch(err => {console.log(err)});
-    if(this.records.length > 0){
-      this.selected = this.records[0];
+    await this.scm.LoadRecords();
+    if(this.scm.Records.length > 0){
+      this.selected = this.scm.Records[0];
     }
-  }
-
-  LoadOrderEvent(): void{
-    if(this.selected === null) return;
-    this.$emit("load-order", this.selected.uuid);
-    getSummary(this.selected.uuid)
-      .then(value => this.$emit("load-summary", value.metadata))
-    ;
   }
 
   getDropDownSelectedText(): string{

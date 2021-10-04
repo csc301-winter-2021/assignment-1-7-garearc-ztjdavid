@@ -1,11 +1,11 @@
 import { Vue } from "vue-class-component";
-import { Prop } from "vue-property-decorator";
-import { Order } from "@/model/Order";
 import { Item } from "@/model/Item";
+import {getModule} from "vuex-module-decorators";
+import ShoppingCartModule from "@/store/modules/ShoppingCartModule";
 
 
 export default class AddItemSection extends Vue {
-  @Prop() order!: Order;
+  scm = getModule(ShoppingCartModule);
 
   currItem = {
     discount: "0.1",
@@ -19,7 +19,7 @@ export default class AddItemSection extends Vue {
   AddItem(e: Event): void{
     e.preventDefault();
     const newItem = this.getItem();
-    if(newItem !== null) this.order.AddItem(newItem);
+    if(newItem !== null) this.scm.AddItem(newItem);
   }
 
   private getItem(): Item | null{

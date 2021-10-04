@@ -1,14 +1,12 @@
 import { Vue } from "vue-class-component";
-import { Prop } from "vue-property-decorator";
-import { Order } from "@/model/Order";
-import { OrderSummary } from "@/model/OrderSummary";
+import {getModule} from "vuex-module-decorators";
+import ShoppingCartModule from "@/store/modules/ShoppingCartModule";
 
 export default class RightSide extends Vue {
-  @Prop() order!: Order;
-  @Prop() os!: OrderSummary | null;
+  scm = getModule(ShoppingCartModule);
 
   showSummary():string{
-    if(this.os === null) return "Please upload current order or load a history order.";
-    return `Total price: ${this.os.total}`;
+    if(this.scm.Summary === null) return "Please upload current order or load a history order.";
+    return `Total price: ${this.scm.Summary.total}`;
   }
 }
