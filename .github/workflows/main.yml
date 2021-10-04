@@ -52,6 +52,7 @@ jobs:
         uses: actions/setup-java@v2.3.1
         with: 
           java-version: 16
+          distribution: 'temurin'
           
       - name: Cache Maven packages
         #This action allows caching dependencies and build outputs to improve workflow execution time.
